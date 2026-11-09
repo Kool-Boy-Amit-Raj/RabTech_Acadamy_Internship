@@ -1,0 +1,13 @@
+Risk ID,Risk,Severity,Owner,Mitigation / control
+R1,Data provenance and permission unknown,High,Data owner / privacy lead,"Confirm source, owner, licence, consent or lawful basis, permitted purpose and retention; block production use until resolved."
+R2,Very small and possibly unrepresentative sample,High,Data owner / analytics lead,Collect a larger multi-period representative sample; document sampling frame and exclusions.
+R3,Churn target definition and timing unknown,High,Business owner,"Define event, observation date, prediction horizon, label window and censoring; audit labels."
+R4,Plan type perfectly separates labels,High,Analytics lead,Investigate data construction and feature timing; exclude plan_type from initial modelling until explained.
+R5,Customer identifier may enable memorisation,Medium,Data engineer / privacy lead,Exclude customer_id from model features; keep join key separately with restricted access.
+R6,"Spend, tenure and activity may act as proxies",Medium-High,Fairness reviewer,Assess feature necessity and disparate impacts; prohibit adverse decisions based on scores.
+R7,False-positive retention contact,Medium,Customer-success lead,"Human approval, frequency caps, respectful messaging, opt-out and complaint monitoring."
+R8,False-negative missed churn risk,Medium,Customer-success lead,Maintain universal support access; monitor recall and review missed cases.
+R9,Temporal leakage or train/test contamination,High,ML lead,"Use timestamped features, customer-grouped temporal splits and untouched future holdout."
+R10,Automation misuse or adverse action,High,Product owner / governance,"Enforce human oversight; prohibit automatic cancellation, price changes or service restriction."
+R11,Population or concept drift,Medium,ML operations lead,Monitor input and outcome drift; pause and revalidate when thresholds are exceeded.
+R12,Uncalibrated probability or arbitrary threshold,Medium,ML lead / business owner,Calibrate on validation data and set threshold using documented error costs and capacity.
